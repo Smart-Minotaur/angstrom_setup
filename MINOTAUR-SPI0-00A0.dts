@@ -5,7 +5,10 @@
     compatible = "ti,beaglebone", "ti,beaglebone-black";
 
     /* identification */
-    part-number = "spi0pinmux";
+    part-number = "MINOTAUR-SPI0";
+
+    /* version */
+    version = "00A0";
 
     fragment@0 {
         target = <&am33xx_pinmux>;
@@ -34,7 +37,7 @@
              spidev@0 {
                  spi-max-frequency = <24000000>;
                  reg = <0>;
-                 compatible = "linux,spidev";
+                 compatible = "spidev";
             };
         };
     };
