@@ -1,0 +1,6 @@
+#!/bin/bash
+chmod +x initSPI
+sudo cp initSPI /etc/init.d/initSPI
+
+sudo ln -s /etc/init.d/initSPI /etc/rc2.d/S99InitSPI
+
