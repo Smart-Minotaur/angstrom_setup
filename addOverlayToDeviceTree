@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Enables SPI0 and SPI1 on device tree for BeagleBone Black and Angstrom Linux.
+# Enables SPI0 and SPI1 on device tree for BeagleBone Black.
 
-cat /sys/devices/bone_capemgr.9/slots
+cat /sys/devices/bone_capemgr.*/slots
 
 # Compile overlay.
 if [ -n "$1" ]
@@ -19,5 +19,5 @@ cp /home/ubuntu/angstrom_setup/MINOTAUR-SPI1-00A0.dtbo /lib/firmware/
 echo MINOTAUR-SPI0 > /sys/devices/bone_capemgr.*/slots
 echo MINOTAUR-SPI1 > /sys/devices/bone_capemgr.*/slots
 
-cat /sys/devices/bone_capemgr.9/slots
+cat /sys/devices/bone_capemgr.*/slots
 
