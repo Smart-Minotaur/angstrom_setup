@@ -16,8 +16,8 @@ then
 fi
 
 # Copy compiled file.
-cp MINOTAUR-SPI0-00A0.dtbo /lib/firmware/
-cp MINOTAUR-SPI1-00A0.dtbo /lib/firmware/
+cp /home/ubuntu/angstrom_setup/MINOTAUR-SPI0-00A0.dtbo /lib/firmware/
+cp /home/ubuntu/angstrom_setup/MINOTAUR-SPI1-00A0.dtbo /lib/firmware/
 
 # Enable overlay
 echo MINOTAUR-SPI0 > /sys/devices/bone_capemgr.*/slots
