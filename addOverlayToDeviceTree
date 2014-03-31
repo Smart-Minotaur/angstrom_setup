@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Enables SPI0 on device tree for BeagleBone Black and Angstrom Linux.
+
+cat /sys/devices/bone_capemgr.9/slots
+
+# Compile overlay.
+dtc -O dtb -o ADAFRUIT-SPI0-00A0.dtbo -b 0 -@ ADAFRUIT-SPI0-00A0.dts
+
+# Copy compiled file.
+cp ADAFRUIT-SPI0-00A0.dtbo /lib/firmware
+
+# Enable overlay
+echo ADAFRUIT-SPI0 > /sys/devices/bone_capemgr.9/slots
+
+# Add manualy to uEnv.txt
+# mkdir /mnt/boot
+# mount /dev/mmcblk0p1 /mnt/boot
+# capemgr.enable_partno=ADAFRUIT-SPI0
+
+cat /sys/devices/bone_capemgr.9/slots
+
