@@ -6,7 +6,6 @@
 # A simple solution is to create the compiled dtbo file on a desktop ubuntu machine
 # and copy it to the BBB.
 
-
 cat /sys/devices/bone_capemgr.9/slots
 
 # Compile overlay.
