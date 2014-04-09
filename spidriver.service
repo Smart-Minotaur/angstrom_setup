@@ -1,0 +1,9 @@
+[Unit]
+Description=SPI Driver setup
+
+[Service]
+Type=simple
+ExecStart=/home/root/angstrom_setup/addOverlayToDeviceTree
+
+[Install]
+WantedBy=multi-user.target
