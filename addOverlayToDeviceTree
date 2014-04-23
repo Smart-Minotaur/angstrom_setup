@@ -11,17 +11,17 @@ cat /sys/devices/bone_capemgr.9/slots
 # Compile overlay.
 if [ -n "$1" ]
 then
-        dtc -O dtb -o BB-SPI1-01-00A0.dtbo -b 0 -@ BB-SPI1-01-00A0.dts
-        dtc -O dtb -o BB-SPI0-01-00A0.dtbo -b 0 -@ BB-SPI0-01-00A0.dts
+	dtc -O dtb -o MINOTAUR-SPI0-00A0.dtbo -b 0 -@ MINOTAUR-SPI0-00A0.dts
+	dtc -O dtb -o MINOTAUR-SPI1-00A0.dtbo -b 0 -@ MINOTAUR-SPI1-00A0.dts
 fi
 
 # Copy compiled file.
-cp BB-SPI1-01-00A0.dtbo /lib/firmware/
-cp BB-SPI0-01-00A0.dtbo /lib/firmware/
+cp MINOTAUR-SPI0-00A0.dtbo /lib/firmware/
+cp MINOTAUR-SPI1-00A0.dtbo /lib/firmware/
 
 # Enable overlay
-echo BB-SPI1-01 > /sys/devices/bone_capemgr.*/slots
-echo BB-SPI0-01 > /sys/devices/bone_capemgr.*/slots
+echo MINOTAUR-SPI0 > /sys/devices/bone_capemgr.*/slots
+echo MINOTAUR-SPI1 > /sys/devices/bone_capemgr.*/slots
 
 # Add manualy to uEnv.txt
 # mkdir /mnt/boot
