@@ -2,7 +2,7 @@
 /plugin/;
 
 /* SPI1 */
-/* D1 Output and D0 Input */
+/* D1 Output and D0 Input and 2 chip selects */
 
 / {
     compatible = "ti,beaglebone", "ti,beaglebone-black";
@@ -22,6 +22,7 @@
                                 0x194 0x33      /* mcasp0_fsx.spi1_d0, INPUT_PULLUP | MODE3 */
                                 0x198 0x13      /* mcasp0_axr0.spi1_d1, OUTPUT_PULLUP | MODE3 */
                                 0x19c 0x13      /* mcasp0_ahclkr.spi1_cs0, OUTPUT_PULLUP | MODE3 */
+				0x164 0x12      /* P9_42 = GPIO0_7, OUTPUT_PULLUP | MODE2 */
                 >;
             };
         };
@@ -36,12 +37,19 @@
              status = "okay";
              pinctrl-names = "default";
              pinctrl-0 = <&spi1_pins_s0>;
+             cs-gpios = <&gpio4 17 0>, <&gpio1 7 0>;
 
-             spidev@1 {
+             spidev@0 {
                  spi-max-frequency = <24000000>;
                  reg = <0>;
                  compatible = "spidev";
-            };
+             };
+
+             spidev@1 {
+                 spi-max-frequency = <24000000>;
+                 reg = <1>;
+                 compatible = "spidev";
+             };
         };
     };
 };
