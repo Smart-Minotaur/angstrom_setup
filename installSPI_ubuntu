@@ -1,6 +1,7 @@
 #!/bin/bash
-chmod +x initSPI
-sudo cp initSPI /etc/init.d/initSPI
+chmod +x addOverlayToDeviceTree
+sudo cp addOverlayToDeviceTree /etc/init.d/addOverlayToDeviceTree
 
-sudo ln -s /etc/init.d/initSPI /etc/rc2.d/S99InitSPI
+sudo ln -s /etc/init.d/addOverlayToDeviceTree /etc/rc2.d/S99AddOverlay
+
 
