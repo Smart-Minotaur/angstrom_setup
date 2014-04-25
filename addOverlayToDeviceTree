@@ -2,10 +2,6 @@
 
 # Enables SPI0 and SPI1 on device tree for BeagleBone Black and Angstrom Linux.
 
-# Warning! On the newest angstrom image there is no dtc in opkg available.
-# A simple solution is to create the compiled dtbo file on a desktop ubuntu machine
-# and copy it to the BBB.
-
 cat /sys/devices/bone_capemgr.9/slots
 
 # Compile overlay.
@@ -22,11 +18,6 @@ cp /home/ubuntu/angstrom_setup/MINOTAUR-SPI1-00A0.dtbo /lib/firmware/
 # Enable overlay
 echo MINOTAUR-SPI0 > /sys/devices/bone_capemgr.*/slots
 echo MINOTAUR-SPI1 > /sys/devices/bone_capemgr.*/slots
-
-# Add manualy to uEnv.txt
-# mkdir /mnt/boot
-# mount /dev/mmcblk0p1 /mnt/boot
-# capemgr.enable_partno=<name>
 
 cat /sys/devices/bone_capemgr.9/slots
 
